@@ -2,3 +2,11 @@ extends layout
 
 block content
 	div(ng-view="")
+	.modal.fade(tabindex="-1", role="dialog", id="imageView")
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type="button", data-dismiss="modal", aria-label="Close")
+						span(aria-hidden="true") ×
+				.modal-body
+					image.img-responsive.centered.image-modal-view

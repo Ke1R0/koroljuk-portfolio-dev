@@ -105,6 +105,9 @@ ul {
 	min-height: 350px;
 	margin: 5px auto;
 }
+.image-modal-view {
+	margin: auto;
+}
 .btn-margin-right {
 	margin-right: 12px;
 }
