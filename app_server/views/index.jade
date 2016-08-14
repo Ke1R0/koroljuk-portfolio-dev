@@ -2,33 +2,10 @@ extends layout
 
 block content
 	section.row
-		.col-md-4.col-sm-6.section-block
-			a(href="/Gallery#Modular")
-				h3 Модульные картины
-			a(href="/Gallery#Modular")
-				img.img-responsive.pull-left.img-rounded.img-left-aligned(src="/images/SectionModular-sm.jpg" alt="Модульные картины")
-			p Современные модульные картины исполняются на нескольких холстах и украшают интерьер без рамок. Могут исполняться как по желаемому образцу заказчика, так и на усмотрение художника, всё зависит от ваших предпочтений. Техника исполнения: масляные краски, акриловые краски.
-		.col-md-4.col-sm-6.section-block
-			a(href="/Gallery#Painting")
-				h3 Авторские работы
-			a(href="/Gallery#Painting")
-				img.img-responsive.pull-left.img-rounded.img-left-aligned(src="/images/SectionPaining-sm.jpg" alt="Авторские работы, живопись")
-			p Моя авторская живопись представлена на сайте пейзажами, натюрмортами, портретами. Я работаю масляными красками, акварелью, акрилом, темперой, пастелью. Здесь представлены работы разных периодов и техник. Вы можете заказать как авторскую работу, так и на интересующую вас тематику.
-		.col-md-4.col-sm-6.section-block
-			a
-				h3 Мастер–классы
-			a
-				img.img-responsive.pull-left.img-rounded.img-left-aligned(src="/images/MasterClass-sm.jpg" alt="Мастер–классы")
-			p Кроме изобразительной деятельности я таже занимаюсь мастер–классами по изобразительному искусству, по технике пысанки (роспись воском по яйцу), декоративному творчеству. Мастер–классы могут быть как индивидуальные, так и групповые (около 5 человек). Материалы входят в стоимость  мастер–классов.
-		.col-md-4.col-sm-6.section-block
-			a(href="/Gallery#Copies")
-				h3 Копии картин
-			a(href="/Gallery#Copies")
-				img.img-responsive.pull-left.img-rounded.img-left-aligned(src="/images/Copies-sm.jpg" alt="Копии картин")
-			p Копии выполняются методом зрительного копирования с образца какой–либо знаменитой картины старых мастеров или более современного автора. Копия выполняется не по размеру оригинала, а на размер меньше или больше исходного. В основном копии пишутся масляными или темперными красками (темперой копируются иконы).
-		.col-md-4.col-sm-6.section-block
-			a(href="/Gallery#Handcraft")
-				h3 Декоративное творчество
-			a(href="/Gallery#Handcraft")
-				img.img-responsive.pull-left.img-rounded.img-left-aligned(src="/images/Handcraft-sm.jpg" alt="Декоративное творчество")
-			p Этим видом творчества украшаются в основном предметы быта и интерьера. Декоративными узорами и рисунками можно украшать мебель,аксессуары, посуду. Всё выполняется эксклюзивно и креативно как масляными, так и акриловыми красками.
+		each service in services
+			.col-md-4.col-sm-6.section-block
+				a(href=service.url)
+					h3= service.title
+				a(href=service.url)
+					img.img-responsive.pull-left.img-rounded.img-left-aligned(src=service.imgUrl alt=service.imgDescription)
+				p= service.description
