@@ -1,71 +1,47 @@
 doctype html
 html(lang='ru', ng-app="portfolio")
-	head
-		title= title
-		meta(name="viewport", content="width=device-width, initial-scale=1")
-		meta(charset="utf-8")
-		meta(name="keywords", content="")
-		meta(name="description", content=description)
-		link(rel='stylesheet', href='/stylesheets/bootstrap.css')
-		link(rel='stylesheet', href='/stylesheets/bootstrap-social.css')
-		link(rel='stylesheet', href='/stylesheets/font-awesome.css')
-		link(rel='stylesheet', href='/stylesheets/style.css')
-		link(href='https://fonts.googleapis.com/css?family=Ubuntu:300&subset=latin,cyrillic', rel='stylesheet', type='text/css')
-		script(src='http://code.jquery.com/jquery-1.9.1.js')
-		script(src='/javascripts/angular.js')
-		script(src='/javascripts/angular-route.js')
-		script(src='/javascripts/bootstrap.js')
-		script(src='/javascripts/imageView.js')
-		script(src='/app.js')
-		script(src='/config.js')
-		script(src='/modules/gallery.js')
-		script(src='/components/gallery.js')
+  head
+    title= title
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(charset="utf-8")
+    meta(name="keywords", content="")
+    meta(name="description", content=description)
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-social.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href='https://fonts.googleapis.com/css?family=Ubuntu:300&subset=latin,cyrillic', rel='stylesheet', type='text/css')
+    script(src='http://code.jquery.com/jquery-1.9.1.js')
+    script(src='/javascripts/angular.js')
+    script(src='/javascripts/angular-route.js')
+    script(src='/javascripts/bootstrap.js')
+    script(src='/javascripts/imageView.js')
+    script(src='/app.js')
+    script(src='/config.js')
+    script(src='/modules/gallery.js')
+    script(src='/components/gallery.js')
 body
-	header.header-panel
-		nav.navbar.p-nav-top.container
-			.navbar-header
-				a.navbar-brand(href='/') Художник Анна Королюк
-				button.navbar-toggle.collapsed.glyphicon.glyphicon-align-justify(type='button', data-toggle='collapse', data-target='#nav-menu')
-			#nav-menu.collapse.navbar-collapse
-				ul.nav.navbar-nav
-					li.dropdown
-						a.dropdown-toggle(id="gallery-menu", data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Галерея
-							span.caret
-						ul.dropdown-menu(aria-labelledby="gallery-menu")
-							li
-								a(href='/Gallery#!/Gallery?section=Painting') Авторские работы
-							li
-								a(href='/Gallery#!/Gallery?section=Modular') Модульные картины
-							li
-								a(href='/Gallery#!/Gallery?section=Copies') Копии картин
-							li
-								a(href='/Gallery#!/Gallery?section=Handcraft') Декоративное творчество
-					li
-						a(href='/PricesAndDelivery') Цены и доставка
-	.container.content
-		block content
-	footer.footer
-		.container
-			.row
-				.col-xs-12.col-sm-4
-					.footer-title Обо мне
-					.footer-description Вас приветствует сайт художника–живописца, преподавателя Анны Королюк. Я профессиональный художник–живописец, веду творческую и педагогическую деятельность. В сфере изобразительного искусства работаю более 10 лет. В своём творчестве не ограничиваю себя и люблю работать в разных техниках и жанрах. Также занимаюсь мастер–классами как по живописи и рисунку, так и по декоративному творчеству.
-				.col-xs-12.col-sm-4
-					.footer-title О мастерской
-					.footer-description В этой онлайн мастерской вы можете увидеть примеры моих творческих работ и заказать картину. Я работаю без посредников, поэтому вы делаете заказ непосредсвенно у самого художника. Сроки исполнения от одной недели, всё зависит отобъёма работы. Вы также можете купить уже готовую картину, если она есть в наличии. Цены и все интересующие вас вопросы в телефонном или электронном режиме.
-				.col-xs-12.col-sm-4
-					.footer-title Контакты
-					ul.footer-contacts
-						li.footer-contacts-item
-							span Телефон: 
-							a(href='tel:+380507042449')
-								span +38-050-70-42-449
-						li.footer-contacts-item
-							span Email: 
-							a(href='mailto:artbarocco12@rambler.ru')
-								span artbarocco12@rambler.ru
-					.footer-social
-						a.btn.btn-margin-right.btn-social-icon.btn-facebook(href='#')
-							span.fa.fa-facebook
-						a.btn.btn-margin-right.btn-social-icon.btn-vk(href='#')
-							span.fa.fa-vk
+  header.header-panel
+    nav.navbar.p-nav-top.container
+      .navbar-header
+        a.navbar-brand(href='/') Художник Анна Королюк
+        button.navbar-toggle.collapsed.glyphicon.glyphicon-align-justify(type='button', data-toggle='collapse', data-target='#nav-menu')
+      #nav-menu.collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li.dropdown
+            a.dropdown-toggle(id="gallery-menu", data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Галерея
+              span.caret
+            ul.dropdown-menu(aria-labelledby="gallery-menu")
+              li
+                a(href='/Gallery#!/Gallery?section=Painting') Авторские работы
+              li
+                a(href='/Gallery#!/Gallery?section=Modular') Модульные картины
+              li
+                a(href='/Gallery#!/Gallery?section=Copies') Копии картин
+              li
+                a(href='/Gallery#!/Gallery?section=Handcraft') Декоративное творчество
+          li
+            a(href='/PricesAndDelivery') Цены и доставка
+  .container.content
+    block content
+  include includes/footer-default

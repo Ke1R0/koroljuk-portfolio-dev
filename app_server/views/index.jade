@@ -1,11 +1,11 @@
 extends layout
 
 block content
-	section.row
-		each service in services
-			.col-md-4.col-sm-6.section-block
-				a(href=service.url)
-					h3= service.title
-				a(href=service.url)
-					img.img-responsive.pull-left.img-rounded.img-left-aligned(src=service.imgUrl alt=service.imgDescription)
-				p= service.description
+  section.row
+    each service in services
+      .col-md-4.col-sm-6.section-block
+        a(href=service.url)
+          h3= service.title
+        a(href=service.url)
+          img.img-responsive.pull-left.img-rounded.img-left-aligned(src=service.imgUrl alt=service.imgDescription)
+        p= service.description
