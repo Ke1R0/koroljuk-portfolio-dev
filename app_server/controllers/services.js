@@ -29,7 +29,7 @@ module.exports.mainPage = function(req, res, next) {
       },
       {
         title: 'Мастер–классы',
-        url: '',
+        url: 'https://vk.com/videos-126365799',
         imgUrl: '/images/MasterClass-sm.jpg',
         imgDescription: 'Мастер–классы',
         description: 'Кроме изобразительной деятельности я таже занимаюсь ' +
