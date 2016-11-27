@@ -1,0 +1,25 @@
+<navigation></navigation>
+<div class="container content">
+  <section class="row">
+    <div ng-repeat="image in vm.data.images" class="col-sx-12 col-sm-6 col-md-4">
+      <image ng-click="vm.showModalImage(image.path)" ng-src="{{image.previewPath}}" data-imagesrc="{{image.path}}" data-toggle="modal" data-target="#imageView" class="img-responsive centered gallery-img"></image>
+    </div>
+  </section>
+  <div tabindex="-1" role="dialog" id="imageView" class="modal ">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="mymodal__header">
+          <div type="button" data-dismiss="modal" aria-label="Close" class="mybtn mybtn--right mybtn--xs">
+            <div class="mybtn__round mybtn--dark">
+              <span class="roundbtn__text" aria-hidden="true">×</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <image ng-src="{{vm.previewSrc}}" class="img-responsive centered image-modal-view"></image>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer-generic></footer-generic>

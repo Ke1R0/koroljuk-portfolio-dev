@@ -1,13 +1,13 @@
-/* GET services page */
-module.exports.mainPage = function(req, res, next) {
-	res.render('index', {
-    title: 'Художник Анна Королюк: Товары',
-    description: 'В этой онлайн мастерской вы можете увидеть примеры ' +
-      'творческих работ и заказать картину',
+angular.module('portfolio')
+  .controller('homeCtrl', homeCtrl);
+
+function homeCtrl() {
+  var vm = this;
+  vm.data = {
     services: [
       {
         title: 'Модульные картины',
-        url: '/Gallery#Modular',
+        url: '/#gallery/Modular',
         imgUrl: '/images/SectionModular-sm.jpg',
         imgDescription: 'Модульные картины',
         description: 'Современные модульные картины исполняются на нескольких ' +
@@ -18,7 +18,7 @@ module.exports.mainPage = function(req, res, next) {
       },
       {
         title: 'Авторские работы',
-        url: '/Gallery#Painting',
+        url: '/#gallery/Painting',
         imgUrl: '/images/SectionPaining-sm.jpg',
         imgDescription: 'Авторские работы, живопись',
         description: 'Моя авторская живопись представлена на сайте пейзажами, ' +
@@ -40,7 +40,7 @@ module.exports.mainPage = function(req, res, next) {
       },
       {
         title: 'Копии картин',
-        url: '/Gallery#Copies',
+        url: '/#gallery/Copies',
         imgUrl: '/images/Copies-sm.jpg',
         imgDescription: 'Копии картин',
         description: 'Копии выполняются методом зрительного копирования с ' +
@@ -51,7 +51,7 @@ module.exports.mainPage = function(req, res, next) {
       },
       {
         title: 'Декоративное творчество',
-        url: '/Gallery#Handcraft',
+        url: '/#gallery/Handcraft',
         imgUrl: '/images/Handcraft-sm.jpg',
         imgDescription: 'Декоративное творчество',
         description: 'Этим видом творчества украшаются в основном предметы ' +
@@ -60,15 +60,5 @@ module.exports.mainPage = function(req, res, next) {
           'креативно как масляными, так и акриловыми красками.'
       }
     ]
-  });
-};
-/* GET prices and delivery page */
-module.exports.pricesAndDelivery = function(req, res, next) {
-  res.render('prices_and_delivery', {
-    title: 'Художник Анна Королюк: Цены и доставка',
-    description: 'В этой онлайн мастерской вы можете увидеть примеры ' +
-      'творческих работ и заказать картину. Вы делаете заказ непосредсвенно ' +
-      'у самого художника. Цена заказа всегда зависит от формата картины, ' +
-      'темы исполнения и расхода материалов.'
-  });
+  };
 };
