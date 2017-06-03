@@ -1,0 +1,17 @@
+<div>
+<ul class="ig-check-list rounded">
+  <div class="ig-check-list__header">
+    <span class="ig-check-list__button" (click)="selectAll()">
+      <a>Выбрать все</a>
+    </span>
+     / 
+    <span class="ig-check-list__button" (click)="deselectAll()">
+      <a>Очистить все</a>
+    </span>
+  </div>
+  <li *ngFor="let item of items" class="ig-check-list-item" (click)="itemClick(item)">
+    {{item.text}}
+    <i *ngIf="item.checked" class="ig-check-list-item--checked fa fa-check"></i>
+  </li>
+</ul>
+</div>

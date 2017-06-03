@@ -1,0 +1,24 @@
+.ig-check-list {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+}
+.ig-check-list__header {
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border-bottom: white solid 1px;
+}
+.ig-check-list-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  position: relative;
+}
+.ig-check-list__button:hover, .ig-check-list-item:hover {
+  color: #55C594;
+}
+.ig-check-list-item--checked {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  display: inline-block;
+}

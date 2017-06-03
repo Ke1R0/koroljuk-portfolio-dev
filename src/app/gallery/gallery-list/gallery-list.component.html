@@ -1,0 +1,26 @@
+<div class="container content">
+  <section class="row">
+    <div class="tool-panel">
+      <ig-icon-button [icon]="filterMenuHidden ? 'fa-filter' : 'fa-times'" [title]="'Фильтр'" (click)="toggleFilterMenu()"></ig-icon-button>
+      <ig-icon-button *ngIf="canUpload" [icon]="'fa-upload'" [title]="'Добавить изображение'" (click)="uploadImage()"></ig-icon-button>
+    </div>
+    <ig-category-filter (filterChanged)="updateFilter($event)" [class.collapse]="filterMenuHidden"></ig-category-filter>
+  </section>
+  <section class="row">
+    <div *ngIf="imagesCollectionIsEmpty" class="col-12 alert alert-warning" role="alert">Изображения соответствующей категории не найдены!</div>
+    <div *ngIf="errorMessage" class="col-12 alert alert-danger" role="alert">{{errorMessage}}</div>
+  </section>
+  <section class="row">
+    <div *ngFor="let image of images; trackBy: trackByImages" class="col-sx-12 col-sm-6 col-md-4 gallery-img__container">
+      <ig-image-card [allowEdit]="canEdit" [allowDelete]="canDelete" (imageClick)="viewImage($event)" (editClick)="editImage($event)" (deleteClick)="deleteImage($event)" [image]="image"></ig-image-card>
+    </div>
+    <div *ngIf="images.length && hasMoreImages" class="col-sx-12 col-sm-6 col-md-4 gallery-img__container">
+      <div class="ig-btn centered text--centered" (click)="loadNextPage()">
+        <i class="fa fa-refresh margin-md size-xxl spinning-360" aria-hidden="true"></i>
+        <div class="size-md">
+          <span>показать ещё</span>
+       </div>
+      </div>
+    </div>
+  </section>
+</div>

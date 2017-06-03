@@ -1,0 +1,19 @@
+<div class="container content">
+  <section class="row">
+    <div class="col-md-4 col-sm-6 section-block" *ngFor="let category of categories">
+      <a *ngIf="category.url.startsWith('http')" href="{{category.url}}" target="_blank">
+        <h4>{{category.title}}</h4>
+      </a>
+      <a *ngIf="category.url.startsWith('http')" href="{{category.url}}" target="_blank">
+        <img [src]="category.icon" alt="{{category.title}}" class="img-fluid pull-left rounded img-left-aligned"/>
+      </a>
+      <a *ngIf="!category.url.startsWith('http')" [routerLink]="['/gallery', {categories: category.code}]">
+        <h4>{{category.title}}</h4>
+      </a>
+      <a *ngIf="!category.url.startsWith('http')" [routerLink]="['/gallery', {categories: category.code}]">
+        <img [src]="category.icon" alt="{{category.title}}" class="img-fluid pull-left rounded img-left-aligned"/>
+      </a>
+      <p>{{category.description}}</p>
+    </div>
+  </section>
+</div>

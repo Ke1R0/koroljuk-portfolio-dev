@@ -1,0 +1,10 @@
+<div class="card image-card" style="width: 20rem;">
+  <img igImage #img="igImage" [src]="image.previewPath" [alt]="image.name" class="img-fluid mx-auto gallery-img card-img-top" [class.hidden]="!img.loaded" (click)="onImageClick()">
+  <div *ngIf="!img.loaded" class="loader"></div>
+  <div class="card-block">
+    <h4 *ngIf="image.name" class="card-title text-truncate">{{image.name}}</h4>
+    <p *ngIf="image.description" class="card-text">{{image.description}}</p>
+    <ig-icon-button *ngIf="allowEdit" [icon]="'fa-pencil-square-o'" [title]="'Редактировать'" (click)="onEditClick()"></ig-icon-button>
+    <ig-icon-button *ngIf="allowDelete" [icon]="'fa-trash-o'" [title]="'Удалить'" (click)="onDeleteClick()"></ig-icon-button>
+  </div>
+</div>
