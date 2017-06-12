@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ArrayUtils } from '../../utils/ig-utils';
 import { GalleryImageService } from '../gallery-image.service';
 import { GalleryImage } from '../gallery-image.model';
 import { GalleryCategory } from '../../models/galleryCategory.model';
@@ -10,9 +11,9 @@ import { CategoryProxyService, CategoryType } from '../../services/category-prox
 })
 export class GalleryImageEditComponent implements OnInit {
   imageId: string;
-  private image: GalleryImage;
-  private errorMessage: string;
-  private categories: GalleryCategory[];
+  image: GalleryImage;
+  errorMessage: string;
+  categories: GalleryCategory[];
 
   constructor(
     private modalInstance: NgbActiveModal,
@@ -32,8 +33,19 @@ export class GalleryImageEditComponent implements OnInit {
       )
   }
 
+  getCategoryTextByCode(categoryCode: string) {
+    const category = this.categories.find(cat => cat.code === categoryCode);
+    return category ? category.title : categoryCode;
+  }
+
   addCategory(categoryCode: string) {
-    this.image.categories.push(categoryCode);
+    if (categoryCode && !ArrayUtils.contains(this.image.categories, categoryCode)) {
+      this.image.categories.push(categoryCode);
+    }
+  }
+
+  removeCategory(categoryCode: string) {
+    this.image.categories = this.image.categories.filter(cat => cat !== categoryCode);
   }
 
   save() {

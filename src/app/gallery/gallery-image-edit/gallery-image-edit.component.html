@@ -1,7 +1,7 @@
 <div class="modal-content">
   <div class="modal-header">
     <h3 class="modal-title text-truncate">{{image?.name}}</h3>
-    <i (click)="cancel()" class="fa fa-times ig-btn size-md close-btn pull-right"></i>
+    <li (click)="cancel()" class="fa fa-times ig-btn size-md close-btn pull-right"></li>
   </div>
   <div class="modal-body">
     <img igImage #img="igImage" [class.hidden]="!img.loaded" [src]="image?.path" class="img-fluid image-modal-view">
@@ -26,7 +26,9 @@
         </span>
       </div>
       <ul *ngIf="image?.categories?.length" class="list-group list-group-flush">
-        <li *ngFor="let category of image.categories" class="list-group-item">{{category}}</li>
+        <li *ngFor="let category of image.categories" class="list-group-item">{{getCategoryTextByCode(category)}}
+          <div (click)="removeCategory(category)" class="fa fa-times ig-btn close-btn pull-right"></div>
+        </li>
       </ul>
     </div>
   </div>

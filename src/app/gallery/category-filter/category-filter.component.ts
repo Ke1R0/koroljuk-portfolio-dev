@@ -26,10 +26,11 @@ export class CategoryFilterComponent implements OnInit {
 
   private initCategoryFilterItems(categories: GalleryCategory[]) {
     this.categoryFilterItems = categories.map(category => {
-      const filterItem = new IgCheckListItem();
-      filterItem.checked = this.isCategoryChecked(category);
-      filterItem.text = category.title;
-      filterItem.value = category;
+      const filterItem: IgCheckListItem = {
+        checked: this.isCategoryChecked(category),
+        text: category.title,
+        value: category
+      };
       return filterItem;
     });
   }

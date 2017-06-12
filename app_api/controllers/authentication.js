@@ -3,14 +3,6 @@ const mongoose = require('mongoose');
 const RespUtils = require('../common/responseUtils');
 const User = mongoose.model('User');
 
-module.exports.findUser = function(email, onSuccess, onError) {
-  User
-  .findOne({email: email})
-  .exec()
-  .then(user => onSuccess({user: {name: user.name}}))
-  .catch(err => onError(err));
-};
-
 module.exports.register = function(req, res) {
   //TODO: remove after registration became necessary
   RespUtils.forbidden(res);
@@ -22,12 +14,14 @@ module.exports.register = function(req, res) {
   user.name = req.body.name;
   user.email = req.body.email;
   user.setPassword(req.body.password);
-  user.save()
-    .then(() => {
+  user.save(err => {
+    if (err) {
+      RespUtils.notFound(res, err);
+    } else {
       let token = user.generateJwt();
       RespUtils.ok(res, {'token': token});
-    })
-    .catch(err => RespUtils.notFound(res, err));
+    }
+  });
 };
 
 module.exports.login = function(req, res) {

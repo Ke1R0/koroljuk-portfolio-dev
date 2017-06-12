@@ -31,6 +31,10 @@ export class PromptComponent {
   onActionClick(value: any) {
     this.modalInstance.close(value);
   }
+
+  cancel() {
+    this.modalInstance.close();
+  }
 }
 
 @Injectable()

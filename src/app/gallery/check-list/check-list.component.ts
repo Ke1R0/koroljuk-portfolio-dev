@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ig-check-list',
   templateUrl: './check-list.component.html',
   styleUrls: ['./check-list.component.css']
 })
-export class IgCheckListComponent implements OnInit {
+export class IgCheckListComponent {
   @Input() items: IgCheckListItem[];
   @Output() checkedChange = new EventEmitter<void>();
 
@@ -17,11 +17,8 @@ export class IgCheckListComponent implements OnInit {
     items.forEach(item => { item.checked = checked });
   }
 
-  ngOnInit() {
-  }
-
   itemClick(item: IgCheckListItem) {
-    let checked = item.checked = !item.checked;
+    item.checked = !item.checked;
     this.onCheckedChange();
   }
 
@@ -36,7 +33,7 @@ export class IgCheckListComponent implements OnInit {
   }
 }
 
-export class IgCheckListItem {
+export interface IgCheckListItem {
     text: string;
     value: any;
     checked: boolean;

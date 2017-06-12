@@ -108,13 +108,13 @@ export class GalleryListComponent implements OnInit {
     let options: NgbModalOptions = {size: "sm"};
     let modalRef = this.modalService.open(GalleryImageEditComponent, options);
     modalRef.componentInstance.imageId = image._id;
-    modalRef.result.then(image => this.updateImageInList(image))
+    modalRef.result.then(image => this.updateImageInList(image)).catch(() => {});
   }
 
   uploadImage() {
     let options: NgbModalOptions = {size: "sm"};
     let modalRef = this.modalService.open(GalleryImageAddComponent, options);
-    modalRef.result.then(image => this.images.unshift(image));
+    modalRef.result.then(image => this.images.unshift(image)).catch(() => {});;
   }
 
   deleteImage(image: GalleryImage) {
