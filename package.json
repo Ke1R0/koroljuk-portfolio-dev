@@ -9,22 +9,12 @@
     "start": "node ./bin/www",
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "build_prod": "ng build --prod",
+    "start_prod": "npm run build_prod & npm start"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^4.1.1",
-    "@angular/common": "^4.1.1",
-    "@angular/compiler": "^4.1.1",
-    "@angular/compiler-cli": "^4.1.1",
-    "@angular/core": "^4.1.1",
-    "@angular/forms": "^4.1.1",
-    "@angular/http": "^4.1.1",
-    "@angular/platform-browser": "^4.1.1",
-    "@angular/platform-browser-dynamic": "^4.1.1",
-    "@angular/platform-server": "^4.1.1",
-    "@angular/router": "^4.1.1",
-    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.22",
     "body-parser": "^1.17.1",
     "co": "^4.6.0",
     "cookie-parser": "^1.4.3",
@@ -41,15 +31,22 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-    "rxjs": "^5.0.1",
-    "serve-favicon": "^2.4.1",
-    "ts-helpers": "^1.1.1",
-    "typescript": "^2.3.2",
-    "zone.js": "^0.7.8"
+    "serve-favicon": "^2.4.1"
   },
   "devDependencies": {
+    "@angular/animations": "^4.1.1",
     "@angular/cli": "^1.1.0",
+    "@angular/common": "^4.1.1",
+    "@angular/compiler": "^4.1.1",
     "@angular/compiler-cli": "^4.1.1",
+    "@angular/core": "^4.1.1",
+    "@angular/forms": "^4.1.1",
+    "@angular/http": "^4.1.1",
+    "@angular/platform-browser": "^4.1.1",
+    "@angular/platform-browser-dynamic": "^4.1.1",
+    "@angular/platform-server": "^4.1.1",
+    "@angular/router": "^4.1.1",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.22",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
     "codelyzer": "~2.0.0-beta.1",
@@ -62,8 +59,11 @@
     "karma-jasmine": "^1.0.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~4.0.13",
+    "rxjs": "^5.0.1",
     "ts-node": "1.2.1",
     "tslint": "^4.3.0",
-    "typescript": "^2.3.2"
+    "ts-helpers": "^1.1.1",
+    "typescript": "^2.3.2",
+    "zone.js": "^0.7.8"
   }
 }
