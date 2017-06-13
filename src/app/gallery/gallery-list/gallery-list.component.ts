@@ -27,6 +27,7 @@ export class GalleryListComponent implements OnInit {
   canUpload: boolean = false;
   canEdit: boolean = false;
   canDelete: boolean = false;
+  errorMessage: string;
   private readonly itemsPerPage: number = 6;
   private pageNumber: number;
   private routeParams: any;

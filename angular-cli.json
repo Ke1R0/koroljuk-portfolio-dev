@@ -9,6 +9,7 @@
       "outDir": "app_client",
       "assets": [
         "assets",
+        "images",
         "favicon.ico"
       ],
       "index": "index.html",
