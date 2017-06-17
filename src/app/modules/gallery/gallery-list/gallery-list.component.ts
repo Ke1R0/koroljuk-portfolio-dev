@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router, NavigationExtras } from '@angular/router';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 
-import { ArrayUtils } from '../../utils/ig-utils';
+import { ArrayUtils } from '../../../utils/ig-utils';
 import { GalleryImage } from '../gallery-image.model';
 import { GalleryImageViewComponent } from '../gallery-image-view/gallery-image-view.component';
 import { GalleryImageEditComponent } from '../gallery-image-edit/gallery-image-edit.component';
 import { GalleryImageAddComponent } from '../gallery-image-add/gallery-image-add.component';
 import { GalleryImageService, GetImagesResponse } from '../gallery-image.service';
-import { AccessRightsService, AccessRights } from '../../services/access-rights.service';
-import { PromptService, DeleteAction, CancelAction } from '../../prompt/prompt';
+import { AccessRightsService, AccessRights } from '../../../services/access-rights.service';
+import { PromptService, DeleteAction, CancelAction } from '../../../prompt/prompt';
 
 const FIRST_PAGE: number = 1;
 

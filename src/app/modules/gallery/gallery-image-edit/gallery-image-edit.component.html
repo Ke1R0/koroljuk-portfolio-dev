@@ -4,8 +4,7 @@
     <li (click)="cancel()" class="fa fa-times ig-btn size-md close-btn pull-right"></li>
   </div>
   <div class="modal-body">
-    <img igImage #img="igImage" [class.hidden]="!img.loaded" [src]="image?.path" class="img-fluid image-modal-view">
-    <div *ngIf="!img.loaded" class="loader"></div>
+    <ig-img [alt]="image?.name" [src]="image?.previewPath" [imgClass]="'img-fluid image-modal-view'"></ig-img>
     <div *ngIf="errorMessage" class="alert alert-warning" role="alert">{{errorMessage}}</div>
     <div class="form-group">
       <input *ngIf="image" type="text" class="form-control" [(ngModel)]="image.name" name="name" placeholder="Название">

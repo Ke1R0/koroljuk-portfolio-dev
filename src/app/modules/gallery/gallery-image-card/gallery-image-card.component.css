@@ -1,0 +1,12 @@
+.image-card {
+  box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+}
+.card-text {
+  max-height: 4rem;
+  overflow: hidden;
+}
+.image-card__img-container { 
+  position: relative;
+  min-width: 100%;
+  padding-top: 75%;
+}

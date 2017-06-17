@@ -1,9 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { ArrayUtils, RouteUtils } from '../../utils/ig-utils';
-import { GalleryCategory } from '../../models/galleryCategory.model';
-import { CategoryProxyService, CategoryType } from '../../services/category-proxy.service';
+import { ArrayUtils, RouteUtils } from '../../../utils/ig-utils';
+import { GalleryCategory } from '../../../models/galleryCategory.model';
+import { CategoryProxyService, CategoryType } from '../../../services/category-proxy.service';
 import { IgCheckListItem } from '../check-list/check-list.component';
 
 @Component({

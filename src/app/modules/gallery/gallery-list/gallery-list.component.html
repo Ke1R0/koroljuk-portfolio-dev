@@ -11,13 +11,13 @@
     <div *ngIf="errorMessage" class="col-12 alert alert-danger" role="alert">{{errorMessage}}</div>
   </section>
   <section class="row">
-    <div *ngFor="let image of images; trackBy: trackByImages" class="col-sx-12 col-sm-6 col-md-4 gallery-img__container">
+    <div *ngFor="let image of images; trackBy: trackByImages" class="col-6 col-sm-4 col-md-3 gallery-list-item">
       <ig-image-card [allowEdit]="canEdit" [allowDelete]="canDelete" (imageClick)="viewImage($event)" (editClick)="editImage($event)" (deleteClick)="deleteImage($event)" [image]="image"></ig-image-card>
     </div>
-    <div *ngIf="images.length && hasMoreImages" class="col-sx-12 col-sm-6 col-md-4 gallery-img__container">
-      <div class="ig-btn centered text--centered" (click)="loadNextPage()">
-        <i class="fa fa-refresh margin-md size-xxl spinning-360" aria-hidden="true"></i>
-        <div class="size-md">
+    <div *ngIf="images.length && hasMoreImages" class="col-6 col-sm-4 col-md-3 gallery-list-item">
+      <div class="ig-btn text--centered" (click)="loadNextPage()">
+        <i class="fa fa-refresh margin-md size-rel-xxl spinning-360" aria-hidden="true"></i>
+        <div class="size-rel-md">
           <span>показать ещё</span>
        </div>
       </div>

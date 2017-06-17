@@ -1,6 +1,7 @@
 import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
+import { IgCommonModule } from '../ig-common/ig-common.module';
 
 import { GalleryRoutingModule } from './gallery-routing.module';
 import { GalleryImageService } from './gallery-image.service';
@@ -10,17 +11,15 @@ import { GalleryImageEditComponent } from './gallery-image-edit/gallery-image-ed
 import { GalleryImageViewComponent } from './gallery-image-view/gallery-image-view.component';
 import { GalleryImageAddComponent } from './gallery-image-add/gallery-image-add.component';
 import { CategoryFilterComponent } from './category-filter/category-filter.component';
-import { ImageDirective } from './directives/image.directive';
 import { IgCheckListComponent } from './check-list/check-list.component';
-import { IconButton } from '../controls/icon-button.component';
-import { FlatButton } from '../controls/flat-button.component';
-import { PromptService, PromptComponent } from '../prompt/prompt';
+import { PromptService, PromptComponent } from '../../prompt/prompt';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    GalleryRoutingModule
+    GalleryRoutingModule,
+    IgCommonModule
   ],
   declarations: [
     GalleryListComponent,
@@ -30,10 +29,7 @@ import { PromptService, PromptComponent } from '../prompt/prompt';
     GalleryImageAddComponent,
     PromptComponent,
     IgCheckListComponent,
-    CategoryFilterComponent,
-    ImageDirective,
-    IconButton,
-    FlatButton
+    CategoryFilterComponent
   ],
   entryComponents: [
     GalleryImageViewComponent,

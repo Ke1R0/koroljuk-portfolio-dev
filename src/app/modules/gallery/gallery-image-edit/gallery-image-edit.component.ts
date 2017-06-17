@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { ArrayUtils } from '../../utils/ig-utils';
+import { ArrayUtils } from '../../../utils/ig-utils';
 import { GalleryImageService } from '../gallery-image.service';
 import { GalleryImage } from '../gallery-image.model';
-import { GalleryCategory } from '../../models/galleryCategory.model';
-import { CategoryProxyService, CategoryType } from '../../services/category-proxy.service';
+import { GalleryCategory } from '../../../models/galleryCategory.model';
+import { CategoryProxyService, CategoryType } from '../../../services/category-proxy.service';
 
 @Component({
   templateUrl: './gallery-image-edit.component.html'

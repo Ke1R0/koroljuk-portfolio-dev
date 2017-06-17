@@ -4,7 +4,7 @@ import { Http, RequestOptionsArgs, URLSearchParams, RequestOptions, Headers } fr
 import 'rxjs/add/operator/map';
 
 import { GalleryImage } from './gallery-image.model';
-import { AuthenticationService } from '../services/authentication.service';
+import { AuthenticationService } from '../../services/authentication.service';
 
 export class GetImagesResponse {
     hasMoreItems: boolean;

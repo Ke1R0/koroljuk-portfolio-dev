@@ -55,6 +55,12 @@ ul {
 .size-xxl {
   font-size: 9rem;
 }
+.size-rel-md {
+  font-size: 4vmin;
+}
+.size-rel-xxl {
+  font-size: 12vmin;
+}
 .text--centered {
   text-align: center;
 }
@@ -65,74 +71,6 @@ ul {
   transform: rotate(360deg);
 }
 /*  END UTILS */
-/*nav section*/
-.navbar {
-  margin-bottom: 20px;
-}
-.navbar-brand {
-  padding: 0;
-}
-.section-navigator {
-	margin-bottom: 20px;
-}
-.header-panel {
-	background-color: #0B1216;
-  color: #fff;
-}
-.navbar-nav > li > a:focus {
-    background-color: inherit;
-}
-.navbar .navbar-nav .show > a,
-.navbar .navbar-nav .show > a:hover,
-.navbar .navbar-nav .show > a:focus,
-.navbar-nav > li > a:hover,
-.navbar-nav a:hover {
-	background-color: inherit;
-	color: #55C594;
-}
-.navbar > a,
-.navbar-nav a,
-.navbar-nav .nav-item,
-.navbar-nav > .dropdown > ul {
-	background-color: #0B1216;
-	color: #fff;
-}
-.navbar-nav > .dropdown > ul a {
-	color: #fff;
-}
-.dropdown-menu > li > a {
-  padding: 3px 20px;
-  white-space: nowrap;
-  line-height: 1.8rem;
-}
-.navbar a:hover,
-.navbar a:focus {
-	color: #55C594 !important;
-	background-color: inherit !important;
-}
-/*end nav section*/
-/*prices section*/
-.prices-list-item {
-	margin: 0 0 20px 0;
-	padding: 10px 20px 10px;
-	position: relative;
-	background: #f0f8ff;
-	font-size: larger;
-}
-.prices-list-item:before {
-	position: absolute;
-	left: 0;
-	top: 0;
-	content: '';
-	height: 100%;
-	width: 2px;
-	background:#55C594;
-}
-/*end prices section*/
-.gallery-img__container {
-  min-height: 350px;
-  padding: 5px;
-}
 .image-modal-view {
   width: 100%;
   margin: 0 0 1rem;
@@ -156,40 +94,34 @@ ul {
 .close-btn:hover {
   transform: scale(1.4) rotate(20deg);
 }
-  /*END BUTTON*/
-.load-more__btn {
-  width: 110px;
-  margin: 50px auto 50px auto;
-}
-.tool {
-  position: relative;
-}
-/* TOOL-PANEL */
-.tool-panel {
-	min-height: 50px;
-  padding: 5px;
-}
-/* END TOOL-PANEL */
-/* LOADER */
-.loader {
-    border: 2rem solid transparent;
-    border-top: 2rem solid #3498db;
-    border-bottom: 2rem solid #3498db;
-    border-radius: 50%;
-    width: 8rem;
-    height: 8rem;
-    animation: spin 1.5s linear infinite;
-    margin: auto;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-/* END LOADER */
+/*END BUTTON*/
 /*END CONTROLS*/
-/* OVERRIDE */
+/* OVERRIDE BOOTSTRAP */
 .navbar-toggler-right {
   top: 0.5rem;
 }
 /* END OVERRIDE */
+/* EXTRA */
+.image-card__img {
+  display: block;
+  object-fit: cover;
+  max-height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+	-moz-filter: grayscale(1);
+	-o-filter: grayscale(1);
+	-ms-filter: grayscale(1);
+}
+.image-card__img:hover {
+  cursor: pointer;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+	-moz-filter: grayscale(0);
+	-o-filter: grayscale(0);
+	-ms-filter: grayscale(0);
+}
+/* END EXTRA */

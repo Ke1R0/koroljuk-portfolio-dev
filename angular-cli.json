@@ -22,7 +22,8 @@
         "stylesheets/bootstrap.min.css",
         "stylesheets/bootstrap-social.css",
         "stylesheets/font-awesome.css",
-        "stylesheets/styles.css"
+        "stylesheets/styles.css",
+        "stylesheets/nav.css"
       ],
       "scripts": [],
       "environmentSource": "environtments/environtment.ts",

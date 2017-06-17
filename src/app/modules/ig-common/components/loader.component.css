@@ -1,0 +1,42 @@
+.loader {
+  width: 3rem;
+  height: 1.1rem;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+.loader-item {
+  background-color: black;
+  width: 0.3rem;
+  height: 1rem;
+  display: inline-block;
+  margin: 0.02rem;
+}
+
+.loader-item-1 {
+  animation: processItem 1.5s linear infinite;
+}
+.loader-item-2 {
+  animation: processItem 1.5s linear 0.3s infinite;
+}
+.loader-item-3 {
+  animation: processItem 1.5s linear 0.6s infinite;
+}
+.loader-item-4 {
+  animation: processItem 1.5s linear 0.9s infinite;
+}
+.loader-item-5 {
+  animation: processItem 1.5s linear 1.2s infinite;
+}
+
+@keyFrames processItem {
+  0%, 40%, 100% { 
+    transform: scaleY(1.0);
+  }
+  20% {
+    transform: scaleY(1.4);
+  }
+}

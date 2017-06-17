@@ -5,7 +5,7 @@ const RespUtils = require('../common/responseUtils');
 const Picture = mongoose.model('Picture');
 const imageDbStorage = require('../storages/imageDbStorage');
 
-const DEF_PAGE_SIZE = 5;
+const DEF_PAGE_SIZE = 11;
 
 function list(req, res) {
   const query = req.query;

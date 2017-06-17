@@ -16,11 +16,15 @@ export class AuthenticationService {
   private get getCurrentUser(): User {
     const token = this.token;
     const payload = this.getPayload(token);
-    return payload ? {
+    return payload && !this.isExpired(payload) ? {
       _id: payload._id,
       email: payload.email,
       name: payload.name
     } : null;
+  }
+
+  private isExpired(payload: any) {
+    return payload.exp < payload.iat;
   }
 
   private setToken(token: string) {
@@ -37,16 +41,6 @@ export class AuthenticationService {
 
   private get token(): string {
     return localStorage[AuthenticationService.key];
-  }
-
-  get isLoggedIn(): boolean {
-      const token = this.token;
-      if (token) {
-        const payload = this.getPayload(token);
-        return payload.exp > Date.now() / 1000;
-      } else {
-        return false;
-      }
   }
 
   get Headers(): Headers {
