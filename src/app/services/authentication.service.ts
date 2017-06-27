@@ -24,7 +24,7 @@ export class AuthenticationService {
   }
 
   private isExpired(payload: any) {
-    return payload.exp < payload.iat;
+    return payload.exp <= payload.iat;
   }
 
   private setToken(token: string) {

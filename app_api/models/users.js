@@ -23,13 +23,13 @@ userSchema.methods.validPassword = function(password) {
 };
 
 userSchema.methods.generateJwt = function() {
-  let expiry = new Date();
-  expiry.setDate(expiry.getDate() + 7);
+  //Token expiration is 1 hour
+  let expiry =  Math.floor(Date.now() / 1000) + (60 * 60);
   return jwt.sign({
     _id: this._id,
     email: this.email,
     name: this.name,
-    exp: parseInt(expiry.getTime() / 1000),
+    exp: parseInt(expiry),
   }, process.env.JWT_SECRET);
 };
 
