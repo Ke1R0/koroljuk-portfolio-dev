@@ -67,7 +67,7 @@ ul {
 .spinning-360 {
   transition: transform 1.5s ease;
 }
-.spinning-360:hover {
+.spinning-360:active, .spinning-360:hover {
   transform: rotate(360deg);
 }
 /*  END UTILS */
