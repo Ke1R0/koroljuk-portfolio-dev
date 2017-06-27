@@ -1,8 +1,7 @@
 node_modules
 app_client
 coverage
-public/images/Gallery-src
-about.txt
 .env
 .vscode
 npm-debug.log
+build
