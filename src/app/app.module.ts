@@ -14,7 +14,6 @@ import { AboutComponent } from './about/about.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { CategoryService } from './services/category.service';
-import { CategoryProxyService } from './services/category-proxy.service';
 import { AuthenticationService } from './services/authentication.service'
 import { AccessRightsService } from './services/access-rights.service';
 import { SigninFormComponent } from './signin-form/signin-form.component';
@@ -38,7 +37,7 @@ import { SigninFormComponent } from './signin-form/signin-form.component';
     NgbModule.forRoot()
   ],
   entryComponents: [ SigninFormComponent ],
-  providers: [CategoryService, AuthenticationService, CategoryProxyService, AccessRightsService],
+  providers: [CategoryService, AuthenticationService, AccessRightsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

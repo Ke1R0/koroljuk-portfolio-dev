@@ -4,7 +4,7 @@ import { ArrayUtils } from '../../../utils/ig-utils';
 import { GalleryImageService } from '../gallery-image.service';
 import { GalleryImage } from '../gallery-image.model';
 import { GalleryCategory } from '../../../models/galleryCategory.model';
-import { CategoryProxyService, CategoryType } from '../../../services/category-proxy.service';
+import { CategoryService, CategoryType } from '../../../services/category.service';
 
 @Component({
   templateUrl: './gallery-image-edit.component.html'
@@ -18,7 +18,7 @@ export class GalleryImageEditComponent implements OnInit {
   constructor(
     private modalInstance: NgbActiveModal,
     private imageService: GalleryImageService,
-    private categoryService: CategoryProxyService) {
+    private categoryService: CategoryService) {
   }
 
   ngOnInit() {

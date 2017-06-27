@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { ArrayUtils, RouteUtils } from '../../../utils/ig-utils';
 import { GalleryCategory } from '../../../models/galleryCategory.model';
-import { CategoryProxyService, CategoryType } from '../../../services/category-proxy.service';
+import { CategoryService, CategoryType } from '../../../services/category.service';
 import { IgCheckListItem } from '../check-list/check-list.component';
 
 @Component({
@@ -18,7 +18,7 @@ export class CategoryFilterComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private categoryService: CategoryProxyService) {}
+    private categoryService: CategoryService) {}
 
   private isCategoryChecked(category: GalleryCategory): boolean {
     return ArrayUtils.contains(this.activeFilter.categories, category.code);

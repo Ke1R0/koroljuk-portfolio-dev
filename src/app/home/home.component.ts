@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GalleryCategory } from '../models/galleryCategory.model';
-import { CategoryProxyService } from '../services/category-proxy.service';
+import { CategoryService } from '../services/category.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,7 @@ import { CategoryProxyService } from '../services/category-proxy.service';
 })
 export class HomeComponent implements OnInit {
   categories: GalleryCategory[];
-  constructor(private categoryService: CategoryProxyService) { }
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
     this.categoryService.getCategories()
