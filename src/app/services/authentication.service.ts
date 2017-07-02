@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+
 import { User } from '../models/user.model'
 import { Credentials } from '../models/credentials.model'
-import 'rxjs/add/operator/toPromise';
+
 
 @Injectable()
 export class AuthenticationService {
@@ -47,12 +51,17 @@ export class AuthenticationService {
     return new Headers({ 'Authorization': `Bearer ${this.token}`});
   }
 
-  login(credentials: Credentials): Promise<User> {
-      return this.http.post('/api/login', credentials).toPromise().then((res: any) => {
-        const data = res.json();
-        this.setToken(data.token);
-        this.setCurrentUser(this.getCurrentUser);
-        return this.currentUser;
+  login(credentials: Credentials): Observable<User> {
+      return this.http.post('/api/login', credentials).map(
+        res => {
+          console.log(res);
+          const data = res.json();
+          this.setToken(data.token);
+          this.setCurrentUser(this.getCurrentUser);
+          return this.currentUser;
+        }
+      ).catch(err => {
+        throw err.json();
       });
   }
 

@@ -20,8 +20,12 @@ export class SigninFormComponent {
   signIn() {
     this.error = null;
     this.authenticationService.login(this.credentials)
-      .then(() => this.modalInstance.close())
-      .catch(err => this.error = err);
+      .subscribe(
+        () => this.modalInstance.close(),
+        err => {
+          this.error = err.message;
+        }
+      );
   }
 
   dismiss() {
