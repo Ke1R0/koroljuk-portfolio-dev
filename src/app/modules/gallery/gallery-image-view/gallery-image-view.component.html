@@ -1,0 +1,12 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title">{{image.name}}</h3>
+    <li (click)="dismiss()" class="fa fa-times ig-btn size-md close-btn pull-right"></li>
+  </div>
+  <div class="modal-body">
+    <ig-img [alt]="image.name" [src]="image.path" [imgClass]="'img-fluid image-modal-view'"></ig-img>
+    <div *ngIf="image.description" class="card-block">
+      <p class="card-text">{{image.description}}</p>
+    </div>
+  </div>
+</div>

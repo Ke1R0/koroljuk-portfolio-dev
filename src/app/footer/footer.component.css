@@ -1,0 +1,36 @@
+.footer {
+	background: #0B1216;
+	padding: 20px 0 100px;
+	color: #9AA8A8;
+}
+.footer [class^=col-]:hover .footer-title:after{
+	width:15%;
+}
+.footer-title {
+	position: relative;
+	padding-top: 30px;
+	color: #fff;
+	font-size: 16px;
+	margin-bottom: 60px;
+	text-transform: uppercase;
+}
+.footer-title:after, .footer-title:before {
+	position: absolute;
+	display: block;
+	top: calc(100% + 15px);
+	content: '';
+	left: 0;
+	height: 1px;
+}
+.footer-title:before {
+	width: 100%;
+	background: #142027
+}
+.footer-title:after{
+	width: 20px;
+	background:#55C594;
+	transition: .6s width;
+}
+.footer-contacts-item > a {
+	color: #55C594;
+}

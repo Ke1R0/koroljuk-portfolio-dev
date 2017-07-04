@@ -1,3 +1,7 @@
 node_modules
-public/images/Gallery-src
-about.txt
+app_client
+coverage
+.env
+.vscode
+npm-debug.log
+build

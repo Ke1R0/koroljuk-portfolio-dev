@@ -1,0 +1,17 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title">Вход в приложение</h3>
+    <i (click)="dismiss()" class="fa fa-times ig-btn size-md close-btn pull-right"></i>
+  </div>
+  <form #form="ngForm" role="form" class="form-horizontal" (submit)="signIn()">
+    <div class="modal-body">
+      <div role="alert" *ngIf="error" class="alert alert-danger">{{ error }}</div>
+      <input type="email" class="form-control" required name="email" placeholder="Email пользователя" [(ngModel)]="credentials.email" #email="ngModel">
+      <br>
+      <input type="password" class="form-control" required name="password" placeholder="Пароль" [(ngModel)]="credentials.password"  #password="ngModel">
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" [disabled]="form.invalid">Войти</button>
+    </div>
+  </form>
+</div>

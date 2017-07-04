@@ -1,0 +1,38 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title text-truncate">{{image?.name}}</h3>
+    <li (click)="cancel()" class="fa fa-times ig-btn size-md close-btn pull-right"></li>
+  </div>
+  <div class="modal-body">
+    <ig-img [alt]="image?.name" [src]="image?.previewPath" [imgClass]="'img-fluid image-modal-view'"></ig-img>
+    <div *ngIf="errorMessage" class="alert alert-warning" role="alert">{{errorMessage}}</div>
+    <div class="form-group">
+      <input *ngIf="image" type="text" class="form-control" [(ngModel)]="image.name" name="name" placeholder="Название">
+    </div>
+    <br>
+    <div class="form-group">
+      <textarea *ngIf="image" type="text" class="form-control" [(ngModel)]="image.description" name="description" placeholder="Описание"></textarea>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="categorySelect">Категории</label>
+      <div class="input-group">
+        <select id="categorySelect" class="form-control" #select>
+          <option *ngFor="let category of categories" value="{{category.code}}">{{category.title}}</option>
+        </select>
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button" (click)="addCategory(select.value)">+</button>
+        </span>
+      </div>
+      <ul *ngIf="image?.categories?.length" class="list-group list-group-flush">
+        <li *ngFor="let category of image.categories" class="list-group-item">{{getCategoryTextByCode(category)}}
+          <div (click)="removeCategory(category)" class="fa fa-times ig-btn close-btn pull-right"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <ig-flat-button [text]="'Сохранить'" (click)="save()"></ig-flat-button>
+    <ig-flat-button [text]="'Отменить'" (click)="cancel()"></ig-flat-button>
+  </div>
+</div>

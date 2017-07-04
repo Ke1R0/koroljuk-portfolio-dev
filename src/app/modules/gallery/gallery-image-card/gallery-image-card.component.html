@@ -1,0 +1,9 @@
+<div class="card image-card">
+  <ig-img class="image-card__img-container" (click)="onImageClick()" [alt]="image.name" [src]="image.previewPath" [imgClass]="'img-fluid mx-auto image-card__img card-img-top'"></ig-img>
+  <div *ngIf="image.name || image.description || allowEdit || allowDelete" class="card-block">
+    <h4 *ngIf="image.name" class="card-title text-truncate">{{image.name}}</h4>
+    <p *ngIf="image.description" class="card-text">{{image.description}}</p>
+    <ig-icon-button *ngIf="allowEdit" [icon]="'fa-pencil-square-o'" [title]="'Редактировать'" (click)="onEditClick()"></ig-icon-button>
+    <ig-icon-button *ngIf="allowDelete" [icon]="'fa-trash-o'" [title]="'Удалить'" (click)="onDeleteClick()"></ig-icon-button>
+  </div>
+</div>

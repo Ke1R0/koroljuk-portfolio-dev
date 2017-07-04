@@ -1,0 +1,127 @@
+body, a {
+	font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+}
+a {
+	color: #256194;
+  cursor: pointer;
+}
+ul {
+	list-style: none !important;
+	padding: 0;
+}
+:focus, a:focus, a:hover {
+  outline: none;
+  text-decoration: none;
+}
+.content {
+	padding: 0 20px 20px;
+  min-height: 300px;
+}
+@media (min-width: 768px) {
+  .hidden-sm-up {
+    display: none !important;
+  }
+}
+@media (max-width: 544px) {
+  .hidden-xs-down {
+    display: none !important;
+  }
+}
+/* UTILS */
+.hidden {
+  display: none !important;
+}
+.centered {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.margin-md {
+  margin: 2rem;
+}
+.size-md {
+  font-size: 2rem;
+}
+.size-l {
+  font-size: 3rem;
+}
+.size-xl {
+  font-size: 4rem;
+}
+.size-xxl {
+  font-size: 9rem;
+}
+.size-rel-md {
+  font-size: 4vmin;
+}
+.size-rel-xxl {
+  font-size: 12vmin;
+}
+.text--centered {
+  text-align: center;
+}
+.spinning-360 {
+  transition: transform 1.5s ease;
+}
+.spinning-360:active, .spinning-360:hover {
+  transform: rotate(360deg);
+}
+/*  END UTILS */
+.image-modal-view {
+  width: 100%;
+  margin: 0 0 1rem;
+  box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.75);
+}
+.btn-margin-right {
+	margin-right: 12px;
+}
+.img-left-aligned {
+	margin: 0 12px 0 0;
+}
+/*CONTROLS*/
+/*BUTTON*/
+.ig-btn {
+  cursor: pointer;
+}
+.close-btn {
+  transition: transform 0.5s ease;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.75);
+}
+.close-btn:hover {
+  transform: scale(1.4) rotate(20deg);
+}
+/*END BUTTON*/
+/*END CONTROLS*/
+/* OVERRIDE BOOTSTRAP */
+.navbar-toggler-right {
+  top: 0.5rem;
+}
+/* END OVERRIDE */
+/* EXTRA */
+.image-card__img {
+  display: block;
+  object-fit: cover;
+  max-height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+	-moz-filter: grayscale(1);
+	-o-filter: grayscale(1);
+	-ms-filter: grayscale(1);
+}
+.image-card__img:hover {
+  cursor: pointer;
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+	-moz-filter: grayscale(0);
+	-o-filter: grayscale(0);
+	-ms-filter: grayscale(0);
+}
+/* END EXTRA */

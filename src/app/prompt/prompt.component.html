@@ -1,0 +1,12 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">{{title}}</h5>
+    <li (click)="cancel()" class="fa fa-times ig-btn size-md close-btn pull-right"></li>
+  </div>
+  <div class="modal-body">
+    <p>{{text}}</p>
+  </div>
+  <div class="modal-footer">
+    <ig-flat-button *ngFor="let action of actions" [text]="action.text" (click)="onActionClick(action.value)"></ig-flat-button>
+  </div>
+</div>
